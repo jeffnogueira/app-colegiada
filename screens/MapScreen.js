@@ -3,7 +3,6 @@ import { Container, Content } from 'native-base';
 import { Text, View, Dimensions, Button } from 'react-native';
 import MapView from 'react-native-maps';
 import MapViewDirections from 'react-native-maps-directions';
-import getDirections from 'react-native-google-maps-directions'
 import * as Location from 'expo-location';
 
 export default function MapScreen() {
