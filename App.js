@@ -1,19 +1,51 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+import HomeScreen from './screens/HomeScreen';
+import CameraScreen from './screens/CameraScreen';
+import QRCodeScreen from './screens/QRCodeScreen';
+import MapScreen from './screens/MapScreen';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-export default function App() {
+const Tab = createBottomTabNavigator();
+
+function Navigator() {
+  let IconComponent = Ionicons;
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={HomeScreen} options={{
+          tabBarLabel: 'Home',
+          tabBarIcon: ({ color, size }) => (
+            <IconComponent name="ios-filing" size={25} />
+          ),
+        }}/>
+      <Tab.Screen name="Camera" component={CameraScreen} options={{
+          tabBarLabel: 'Câmera',
+          tabBarIcon: ({ color, size }) => (
+            <IconComponent name="ios-camera" size={25} />
+          ),
+        }}/>
+      <Tab.Screen name="QRCode" component={QRCodeScreen} options={{
+          tabBarLabel: 'QR Code',
+          tabBarIcon: ({ color, size }) => (
+            <IconComponent name="ios-code" size={25} />
+          ),
+        }}/>
+      <Tab.Screen name="Map" component={MapScreen} options={{
+          tabBarLabel: 'Mapa',
+          tabBarIcon: ({ color, size }) => (
+            <IconComponent name="ios-map" size={25} />
+          ),
+        }}/>
+    </Tab.Navigator>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default function App() {
+  return (
+    <NavigationContainer>
+        <Navigator />
+    </NavigationContainer>
+  );
+}
