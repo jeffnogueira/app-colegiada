@@ -1,9 +1,9 @@
 import React from 'react';
 import { Ionicons } from '@expo/vector-icons';
-import HomeScreen from './screens/HomeScreen';
-import CameraScreen from './screens/CameraScreen';
-import QRCodeScreen from './screens/QRCodeScreen';
-import MapScreen from './screens/MapScreen';
+import HomeScreen from './src/screens/HomeScreen';
+import CameraScreen from './src/screens/CameraScreen';
+import QRCodeScreen from './src/screens/QRCodeScreen';
+import MapScreen from './src/screens/MapScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
